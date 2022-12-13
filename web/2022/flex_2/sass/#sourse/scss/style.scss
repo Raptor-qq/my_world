@@ -1,0 +1,230 @@
+// Файл обнуляющих стилей
+@import "nullstyle.scss";
+
+body{
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.wrapper {
+	min-height: 100%; // Чтобы вся оболочка сайта была на всю высоту экрана
+	overflow: hidden; // Чтобы ничего за экран не вылезло
+	display: flex; // Включаем флекс
+	flex-direction: column; // Переворачивает флекс
+}
+.content {
+	flex: 1 1 auto; //Позволяет классу растягиваться, footer переносится вниз
+}
+.hi {
+	background-color: #445161;
+	padding: 50px 0;
+		&__row {
+			display: flex;
+			justify-content: space-between;
+			font-size: 20px;
+			line-height: 1.8;
+		}
+
+		&__body {
+			color: #fff;
+		}
+
+&__title {
+	text-shadow: 1px 1px 0 #000;
+	font-size: 60px;
+	margin: 0px 0px 38px 0px;
+}
+
+		&__list li::before{
+			content: url('../../sass/img/check-icon.png');
+			margin: 0px 10px 0px 0px;
+
+		&__image{
+		}
+		}
+	}
+
+		.what {
+			&__row {
+				display: flex;
+				padding: 49px 0px 46px 0px;
+				justify-content: space-between;
+			}
+	
+			&__image {
+				flex: 0 0 auto; //Запрет на изменение размера блока с изображением. Также применятся flex: 0 0 200px; (берем ширину картинки)
+			}
+			&__image img{
+				max-width: 100%; //Если картинка будет использоваться большего размера чем 430px, то она будет сжиматься до размера блока
+			}
+	
+			&__body {
+				flex: 1 1 auto; //Позволяет классу растягиваться
+				padding: 0px 0px 0px 38px;
+				text-align: left;
+			}
+
+			&__title {
+				padding: 0px 0px 36px 0px;
+			}
+
+			&__text {
+				font-size: 16px;
+				line-height: 1.5;
+				color: #333;
+				p:nth-child(1){
+					margin: 0px 0px 20px 0px;
+				}
+			}
+	}
+
+	.columns {
+		background-color: #f5f5f5;
+		&__row {
+			padding: 48px 0px 29px 0px;
+		}
+
+		&__title {
+			text-align: center;
+			padding: 0px 0px 31px 0px;
+		}
+
+		&__body {
+			display: flex;
+			margin: 0px -8px; // Для одинакового отступа между колонками устанавливаем отрицательный отступ, равный половине нужного отступа в макете
+		}
+
+		&__column {
+			padding: 0px 8px; // Добавляем вторую половину отступа в теле самого объекта
+		}
+
+		&__block {
+			display: flex;
+			margin: 0px 0px 30px 0px;
+		}
+
+		&__image {
+			flex: 0 0 auto;
+		}
+
+		&__image img{
+			max-width: 100%;
+		}
+		&__subbody {
+			margin: 0px 0px 0px 15px;
+		}
+
+		&__subtitle {
+			margin: 0px 0px 15px 0px;
+			font-size: 24px;
+			text-align: left;
+			color: #445161;
+		}
+
+		&__text {
+			font-size: 16px;
+			line-height: 1.2;
+			text-align: left;
+			color: #333;
+		}
+}
+
+.subscribe {
+
+	&__row {
+		padding: 49px 0px 50px 0px;
+	}
+
+	&__title {
+		text-align: center;
+		margin: 0px 0px 29px 0px;
+	}
+
+	&__body {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__column {
+		display: flex;
+		flex-direction: column;
+		background-color: #445162;
+		max-height: 500px;
+		max-width: 300px;
+		border: #445162 solid 2px;
+		border-radius: 2%;
+	}
+
+	&__subtitle1 {
+		font-size: 24px;
+		text-transform: uppercase;
+		line-height: 1.9;
+		text-align: center;
+		color: #fff;
+		height: 60px;
+	}
+
+	&__subtitle2 {
+		text-transform:lowercase;
+		height: 71px;
+		background-color: #fff;
+		font-size: 40px;
+		line-height: 1.6;
+		text-align: center;
+		color: #445162;
+	}
+
+	&__text {
+		flex: 1 1 auto;
+		padding: 20px 30px 0px 20px;
+		line-height: 1.71;
+		text-align: left;
+		color: #fff;
+
+		p:nth-child(1){
+			margin: 0px 0px 25px 0px;
+		}
+	}
+
+	&__btn {
+		display: block;
+		margin: 20px 20px 20px 20px;
+		width: 260px;
+		height: 40px;
+		border-radius: 5px;
+		background-color: #fff;
+		text-transform: lowercase;
+		font-size: 18px;
+		font-weight: bold;
+		line-height: 2;
+		text-align: center;
+		color: #445161;
+	}
+}
+
+	.title {
+		font-size: 30px;
+		line-height: 1.2;
+		color: #445161;
+	}
+
+.container {
+	max-width: 1180px; //устанавливаем максимальную ширину контентоной части
+	margin: 0 auto; //устанавливаем контент по центру
+}
+
+.footer {
+	background-color: #f5f5f5;
+		&__row {
+			display: flex;
+			justify-content: center;
+			height: 177px;
+		}
+
+		&__text {
+			margin: 31px 0px 0px 0px;
+			font-size: 12px;
+			line-height: 2;
+			letter-spacing: 0.3px;
+			text-align: center;
+			color: #445162;
+		}
+}

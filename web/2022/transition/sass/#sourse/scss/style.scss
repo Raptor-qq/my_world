@@ -1,0 +1,146 @@
+//<МИКСИНЫ>===================================================================================================
+@mixin flexbox() {display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;font-size:14px;}
+	//<МИКСИНЫ>===================================================================================================
+
+//<ШРИФТЫ>==============================================================================================
+
+//<ШРИФТЫ>==============================================================================================
+
+//<Шрифты по умолчанию>==========================================================================================
+
+//<Шрифты по умолчанию>==========================================================================================
+
+//<ПЕРЕМЕННЫЕ>==================================================================================
+
+//<ПЕРЕМЕННЫЕ>==================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>========================================================================
+@import "nullstyle.scss";
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>========================================================================
+
+//<ОБОЛОЧКА>=====================================================================================================
+.wrapper{
+	max-width: 100%;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	margin: 0 auto;
+}
+//<ОБОЛОЧКА>=====================================================================================================
+
+//</ОСНОВНАЯ СЕТКА>=================================================================================
+body{
+}
+.button {
+max-width: 800px;
+}
+
+.btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	top: 0;
+	background-color: rgb(152, 155, 151);
+	width: 400px;
+	min-height: 95px;
+	font-size: 30px;
+	color: rgb(255, 255, 255);
+	border-radius: 20px;
+	box-shadow: 0px 10px 0px 0px rgb(0, 0, 0);
+}
+
+.btn1 {transition: background-color 0.5s ease 0s, top 0.5s ease 0s, box-shadow 0.5s ease 0s;
+	&:hover {
+		transition: background-color 1s ease 0.2s, top 1s ease 0.2s, box-shadow 1s ease 0.2s;
+		background-color: rgb(64, 255, 0);
+		top: 3px;
+		box-shadow: 0px 7px 0px 0px rgb(0, 0, 0);
+
+	}
+	&:active {
+		background-color: rgb(255, 0, 0);
+		position: relative;
+		top: 10px;
+		box-shadow: 0px 0px 0px 0px rgb(0, 0, 0);
+	}
+}
+
+.btn2 {
+	transition-duration: 2s;
+	transition-property: all;
+	transition-delay: 0s;
+	transition-timing-function: ease;
+&:hover {
+	width: 800px;
+	background-color: rgb(0, 62, 231);
+}
+}
+
+.btn3 {
+	transition-duration: 2s;
+	transition-property: all;
+	transition-delay: 0s;
+	transition-timing-function: ease-in;
+&:hover {
+	width: 800px;
+	background-color: rgb(0, 62, 231);
+}
+}
+
+.btn4 {
+	transition-duration: 2s;
+	transition-property: all;
+	transition-delay: 0s;
+	transition-timing-function: ease-out;
+&:hover {
+	width: 800px;
+	background-color: rgb(0, 62, 231);
+}
+}
+
+.btn5 {
+	transition-duration: 2s;
+	transition-property: all;
+	transition-delay: 0s;
+	transition-timing-function: ease-in-out;
+&:hover {
+	width: 800px;
+	background-color: rgb(0, 62, 231);
+}
+}
+
+.btn6 {
+	transition-duration: 2s;
+	transition-property: all;
+	transition-delay: 0s;
+	transition-timing-function: linear;
+&:hover {
+	width: 800px;
+	background-color: rgb(0, 62, 231);
+}
+}
+
+.btn7 {
+	transition-duration: 2s;
+	transition-property: all;
+	transition-delay: 0s;
+	transition-timing-function: steps(10,start);
+&:hover {
+	width: 800px;
+	background-color: rgb(0, 62, 231);
+}
+}
+
+.btn8 {
+	transition-duration: 2s;
+	transition-property: all;
+	transition-delay: 0s;
+	transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+&:hover {
+	width: 800px;
+	background-color: rgb(0, 62, 231);
+}
+}

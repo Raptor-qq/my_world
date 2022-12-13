@@ -1,0 +1,58 @@
+// Файл обнуляющих стилей
+@import "nullstyle.scss";
+
+body{
+}
+.wrapper {
+	height: 100%;
+	min-height: 100%;
+	padding: 50px;
+}
+.block {
+	
+
+		&__row {
+			display: flex;
+			flex-direction: column;
+			border: 20px solid #ece89d;
+			margin: 0px 0px 20px 0px;
+			height: 1000px;
+		}
+		.block__column_1{
+		}
+		.block__column_2{
+			flex: 1 1 auto;
+		}
+		.block__column_3{
+		}
+		&__column {
+			border: 20px solid #5e5373;
+			&:nth-child(1) {
+				background-color: #18b5a4;
+				padding: 10px 50px;
+				font-size: 50px;
+				color: #fff;
+				font-weight: 700;
+				text-align: center;
+				line-height: 2.8;
+			}
+			&:nth-child(2) {
+				padding: 10px 50px;
+				text-align: center;
+				background-color: #18b5a4;
+				font-size: 100px;
+				color: #fff;
+				font-weight: 700;
+			}
+			&:nth-child(3) {
+				padding: 10px 50px;
+				background-color: #18b5a4;
+				font-size: 50px;
+				color: #fff;
+				font-weight: 700;
+				text-align: center;
+				line-height: 2.8;
+			}
+		}
+	}
+

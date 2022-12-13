@@ -1,0 +1,149 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+}
+
+.content {
+  flex: 1 1 auto;
+  min-height: 100%;
+  background-color: #000;
+  padding: 50px;
+}
+.content__circle {
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: relative;
+  left: 0;
+  -webkit-animation-name: white-circle, color1;
+          animation-name: white-circle, color1;
+  -webkit-animation-duration: 2s, 5s;
+          animation-duration: 2s, 5s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: alternate-reverse, alternate;
+          animation-direction: alternate-reverse, alternate;
+  -webkit-animation-delay: 1s, 0s;
+          animation-delay: 1s, 0s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+:hover .content__circle {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+@-webkit-keyframes white-circle {
+  0% {
+    left: 0;
+  }
+  50% {
+    border-radius: 0%;
+  }
+  100% {
+    left: 500px;
+  }
+}
+
+@keyframes white-circle {
+  0% {
+    left: 0;
+  }
+  50% {
+    border-radius: 0%;
+  }
+  100% {
+    left: 500px;
+  }
+}
+@-webkit-keyframes color1 {
+  0% {
+    background-color: #fff;
+  }
+  100% {
+    background-color: rgb(255, 0, 0);
+  }
+}
+@keyframes color1 {
+  0% {
+    background-color: #fff;
+  }
+  100% {
+    background-color: rgb(255, 0, 0);
+  }
+}

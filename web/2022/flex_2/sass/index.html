@@ -1,0 +1,156 @@
+<!--Сообщаем браузеру, как стоит обрабатывать эту страницу-->
+<!DOCTYPE html>
+<!--Оболочка документа, указываем язык содержимого-->
+<html lang="ru">
+<!--Заголовок страницы, контейнер для других важных данных (не отображается)-->
+
+<head>
+	<!--Название страницы-->
+	<title> FLEXBOX-Практика</title>
+	<!--Подключаем CSS-->
+	<link rel="stylesheet" href="css/style.css">
+	<!--Кодировка страницы-->
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+	<!-- Адаптивность для смартфонов. 1 знач – изначальный масштаб страницы. 2 знач – максимальный масштаб страницы. 3 знач – Запрещается масштабирование контента. -->
+	<meta name="viewport" content="width=device-width, initial-scake=1.0, maximum-scale=1.0, user-scalable=0" />
+	<!-- Отключает принудительную ссылку у номера телефона на iOS -->
+	<meta name="format-detection" content="telephone=no">
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="content">
+			<div class="hi">
+				<div class="container">
+					<div class="hi__row">
+						<div class="hi__body">
+							<div class="hi__title">Привет, друг!</div>
+							<ul class="hi__list">
+								<li>У тебя все получится!</li>
+								<li>Никогда не сдавайся!</li>
+								<li>Сегодня ты уже знаешь больше чем вчера!</li>
+								<li>Спасибо тебе за поддержку!</li>
+							</ul>
+						</div>
+						<div class="hi__image">
+							<img src="../sass/img/layer-3.jpg" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="what">
+				<div class="container">
+					<div class="what__row">
+						<div class="what__image"><img src="../sass/img/ee-5-h-1-np-0-idz-5-keo-0-y-jkklgc-8.png" alt="">
+						</div>
+						<div class="what__body">
+							<div class="what__title title">Что такое FlexBox?</div>
+							<div class="what__text">
+								<p>Flexbox - это целый модуль, содержащий в себе набор свойств и их значений как для родителя
+									flex-контейнера так и для его дочерних элементов flex-элементов.</p>
+								<p>Основным преимуществом гибкой FLEX разметки является возможность изменять
+									ширину/высоту пространство вокруг и порядок flex-элементов, для того чтобы наилучшим
+									образом заполнить доступное пространство flex-контейнера.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="columns">
+				<div class="container">
+					<div class="columns__row">
+						<div class="columns__title title">Колонки с flex-контейнерами</div>
+						<div class="columns__body">
+							<div class="columns__column">
+								<div class="columns__block">
+									<div class="columns__image"><img src="../sass/img/image.png" alt=""></div>
+									<div class="columns__subbody">
+										<div class="columns__subtitle">The description for the image</div>
+										<div class="columns__text">Pariatur iure ab sunt nesciunt, quibusdam odio iste cumque
+											itaque, ipsa vel exercitationem ullam quos aut nostrum cupiditate fuga quaerat quam
+											animi dolores. Sequi itaque, unde perferendis nemo debitis dolor.</div>
+									</div>
+								</div>
+								<div class="columns__block">
+									<div class="columns__image"><img src="../sass/img/image.png" alt=""></div>
+									<div class="columns__subbody">
+										<div class="columns__subtitle">The description for the image</div>
+										<div class="columns__text">Pariatur iure ab sunt nesciunt, quibusdam odio iste cumque
+											itaque, ipsa vel exercitationem ullam quos aut nostrum cupiditate fuga quaerat quam
+											animi dolores. Sequi itaque, unde perferendis nemo debitis dolor.</div>
+									</div>
+								</div>
+							</div>
+							<div class="columns__column">
+								<div class="columns__block">
+									<div class="columns__image"><img src="../sass/img/image.png" alt=""></div>
+									<div class="columns__subbody">
+										<div class="columns__subtitle">The description for the image</div>
+										<div class="columns__text">Pariatur iure ab sunt nesciunt, quibusdam odio iste cumque
+											itaque, ipsa vel exercitationem ullam quos aut nostrum cupiditate fuga quaerat quam
+											animi dolores. Sequi itaque, unde perferendis nemo debitis dolor.</div>
+									</div>
+								</div>
+								<div class="columns__block">
+									<div class="columns__image"><img src="../sass/img/image.png" alt=""></div>
+									<div class="columns__subbody">
+										<div class="columns__subtitle">The description for the image</div>
+										<div class="columns__text">Pariatur iure ab sunt nesciunt, quibusdam odio iste cumque
+											itaque, ipsa vel exercitationem ullam quos aut nostrum cupiditate fuga quaerat quam
+											animi dolores. Sequi itaque, unde perferendis nemo debitis dolor.</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="subscribe">
+				<div class="container">
+					<div class="subscribe__row">
+						<div class="subscribe__title title">Вертикальное выравнивание</div>
+						<div class="subscribe__body">
+							<div class="subscribe__column">
+								<div class="subscribe__subtitle1">буду рад</div>
+								<div class="subscribe__subtitle2">подписке</div>
+								<div class="subscribe__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint
+									tenetur fugit vel, eligendi illum, placeat quo vero reiciendis consectetur.</div>
+								<a href="" class="subscribe__btn">подписаться</a>
+							</div>
+							<div class="subscribe__column">
+								<div class="subscribe__subtitle1">буду рад</div>
+								<div class="subscribe__subtitle2">лайку</div>
+								<div class="subscribe__text">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint tenetur fugit vel, eligendi
+										illum, placeat quo vero reiciendis consectetur voluptatibus atque et itaque, hic,
+										deleniti. Sunt commodi tempora voluptatum dolorum.</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint tenetur fugit vel, eligendi
+										illum, placeat quo vero reiciendis consectetur tempora voluptatum dolorum.</p>
+								</div>
+								<a href="" class="subscribe__btn">лайк</a>
+							</div>
+							<div class="subscribe__column">
+								<div class="subscribe__subtitle1">буду рад</div>
+								<div class="subscribe__subtitle2">комментарию</div>
+								<div class="subscribe__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+									eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
+									gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</div>
+								<a href="" class="subscribe__btn">комментировать</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="footer">
+		<div class="container">
+			<div class="footer__row">
+				<div class="footer__text">Фрилансер по жизни 2019</div>
+			</div>
+		</div>
+	</footer>
+	</div>
+</body>
+
+</html>
