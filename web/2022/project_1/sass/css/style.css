@@ -108,7 +108,7 @@ body {
 }
 
 .mainblock {
-  background: url("../img/bg-header.jpg");
+  background: url("../img/bg-header.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -447,7 +447,7 @@ body {
 }
 
 .partners {
-  background: url("../../sass/img/bg-header-copy.jpg") 0 0 no-repeat;
+  background: url("../img/bg-header-copy.png") 0 0 no-repeat;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
