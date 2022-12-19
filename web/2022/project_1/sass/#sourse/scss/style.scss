@@ -34,9 +34,9 @@ $fontfamily:"Lato";
 .container {
 	max-width: 1103px;
 	margin: 0 auto;
-	@media (max-width:1103px) {max-width: 970px;}
-	@media (max-width:992px) {max-width: 750px;}
-	@media (max-width:767px){max-width: none;}
+	//@media (max-width:1103px) {max-width: 970px;}
+	//@media (max-width:992px) {max-width: 750px;}
+	//@media (max-width:767px){max-width: none;}
 }
 //</ОСНОВНАЯ СЕТКА>=================================================================================
 html {

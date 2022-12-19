@@ -1,0 +1,169 @@
+<!--Сообщаем браузеру, как стоит обрабатывать эту страницу-->
+<!DOCTYPE html>
+<!--Оболочка документа, указываем язык содержимого-->
+<html lang="ru">
+<!--Заголовок страницы, контейнер для других важных данных (не отображается)-->
+
+<head>
+	<!--Название страницы-->
+	<title>Адаптивные изображения</title>
+	<!--Подключаем CSS-->
+	<link rel="stylesheet" href="css/style.css">
+	<!--Кодировка страницы-->
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+	<!-- Адаптивность для смартфонов. 1 знач – изначальный масштаб страницы. 2 знач – максимальный масштаб страницы. 3 знач – Запрещается масштабирование контента. -->
+	<meta name="viewport" content="width=device-width, initial-scake=1.0, maximum-scale=1.0, user-scalable=0" />
+	<!-- Отключает принудительную ссылку у номера телефона на iOS -->
+	<meta name="format-detection" content="telephone=no">
+</head>
+
+<!--Отображаемое тело страницы-->
+
+<body>
+	<div class="wrapper">
+		<div class="content">
+			<section class="text">
+				<h2 class="text__title title">В тексте</h2>
+				<div class="text__image">
+					<picture>
+						<source srcset="img/1300x400.png" type="image/png" media="(min-width:1000px)">
+						<source srcset="img/800x400.png" type="image/png" media="(min-width:700px)">
+						<source srcset="img/400x600.png" type="image/png" media="(max-width:700px)">
+						<img src="img/1300x400.png" alt="">
+					</picture>
+				</div>
+				<div class="text__value">
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat consequuntur laboriosam beatae quis
+						incidunt minima quam inventore voluptatem. Cumque aliquid nobis aperiam velit, voluptate aut saepe
+						asperiores distinctio quae similique doloremque ab vitae quo dolorum obcaecati, consequuntur eveniet
+						placeat sapiente enim quas iure, dolorem facere officia provident. Eum, nemo culpa?</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat consequuntur laboriosam beatae quis
+						incidunt minima quam inventore voluptatem. Cumque aliquid nobis aperiam velit, voluptate aut saepe
+						asperiores distinctio quae similique doloremque ab vitae quo dolorum obcaecati, consequuntur eveniet
+						placeat sapiente enim quas iure, dolorem facere officia provident. Eum, nemo culpa?</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat consequuntur laboriosam beatae quis
+						incidunt minima quam inventore voluptatem. Cumque aliquid nobis aperiam velit, voluptate aut saepe
+						asperiores distinctio quae similique doloremque ab vitae quo dolorum obcaecati, consequuntur eveniet
+						placeat sapiente enim quas iure, dolorem facere officia provident. Eum, nemo culpa?</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat consequuntur laboriosam beatae quis
+						incidunt minima quam inventore voluptatem. Cumque aliquid nobis aperiam velit, voluptate aut saepe
+						asperiores distinctio quae similique doloremque ab vitae quo dolorum obcaecati, consequuntur eveniet
+						placeat sapiente enim quas iure, dolorem facere officia provident. Eum, nemo culpa?</p>
+				</div>
+				<div class="text__image">
+					<img src="img/800x400.png" alt="">
+				</div>
+				<div class="text__value">
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat consequuntur laboriosam beatae quis
+						incidunt minima quam inventore voluptatem. Cumque aliquid nobis aperiam velit, voluptate aut saepe
+						asperiores distinctio quae similique doloremque ab vitae quo dolorum obcaecati, consequuntur eveniet
+						placeat sapiente enim quas iure, dolorem facere officia provident. Eum, nemo culpa?</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat consequuntur laboriosam beatae quis
+						incidunt minima quam inventore voluptatem. Cumque aliquid nobis aperiam velit, voluptate aut saepe
+						asperiores distinctio quae similique doloremque ab vitae quo dolorum obcaecati, consequuntur eveniet
+						placeat sapiente enim quas iure, dolorem facere officia provident. Eum, nemo culpa?</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat consequuntur laboriosam beatae quis
+						incidunt minima quam inventore voluptatem. Cumque aliquid nobis aperiam velit, voluptate aut saepe
+						asperiores distinctio quae similique doloremque ab vitae quo dolorum obcaecati, consequuntur eveniet
+						placeat sapiente enim quas iure, dolorem facere officia provident. Eum, nemo culpa?</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat consequuntur laboriosam beatae quis
+						incidunt minima quam inventore voluptatem. Cumque aliquid nobis aperiam velit, voluptate aut saepe
+						asperiores distinctio quae similique doloremque ab vitae quo dolorum obcaecati, consequuntur eveniet
+						placeat sapiente enim quas iure, dolorem facere officia provident. Eum, nemo culpa?</p>
+				</div>
+			</section>
+			<section class="cards">
+				<h2 class="cards__title title">В карточках (три колонки)</h2>
+				<div class="cards__row">
+					<div class="cards__column">
+						<div class="cards__item">
+							<div class="cards__image">
+								<img src="img/800x400.png" alt="">
+							</div>
+							<div class="cards__body">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui aliquam reiciendis harum omnis
+								sequi dolorum tempore doloribus tenetur? Reiciendis magni saepe pariatur consequuntur ab placeat
+								incidunt? Sapiente amet hic saepe.
+							</div>
+						</div>
+					</div>
+					<div class="cards__column">
+						<div class="cards__item">
+							<div class="cards__image">
+								<img src="img/400x600.png" alt="">
+							</div>
+							<div class="cards__body">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui aliquam reiciendis harum omnis
+								sequi dolorum tempore doloribus tenetur? Reiciendis magni saepe pariatur consequuntur ab placeat
+								incidunt? Sapiente amet hic saepe.
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus possimus aspernatur quidem sed
+								ullam animi illum, dolorem consequuntur ipsum autem repudiandae error ut quis nobis soluta!
+								Vitae quasi officia laborum.
+							</div>
+						</div>
+					</div>
+					<div class="cards__column">
+						<div class="cards__item">
+							<div class="cards__image">
+								<img src="img/1300x200.png" alt="">
+							</div>
+							<div class="cards__body">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui aliquam reiciendis harum omnis
+								sequi dolorum tempore doloribus tenetur? Reiciendis magni saepe pariatur consequuntur ab placeat
+								incidunt? Sapiente amet hic saepe.
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="items">
+				<h2 class="items__title title">В карточках (в ряд)</h2>
+				<div class="items__item">
+					<div class="items__image">
+						<img src="img/1300x400.png" alt="">
+					</div>
+					<div class="items__body">
+						<div class="items__label">Заголовок</div>
+						<div class="items__text">
+							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis nulla reprehenderit enim dolores
+							repellat corporis provident veritatis possimus, odit sunt quidem quisquam, quas repudiandae?
+							Molestias, id ex? Optio, voluptates accusamus.
+						</div>
+					</div>
+				</div>
+				<div class="items__item">
+					<div class="items__image">
+						<img src="img/400x600.png" alt="">
+					</div>
+					<div class="items__body">
+						<div class="items__label">Заголовок</div>
+						<div class="items__text">
+							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis nulla reprehenderit enim dolores
+							repellat corporis provident veritatis possimus, odit sunt quidem quisquam, quas repudiandae?
+							Molestias, id ex? Optio, voluptates accusamus.
+							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis nulla reprehenderit enim dolores
+							repellat corporis provident veritatis possimus, odit sunt quidem quisquam, quas repudiandae?
+							Molestias, id ex? Optio, voluptates accusamus.
+						</div>
+					</div>
+				</div>
+				<div class="items__item">
+					<div class="items__image">
+						<img src="img/800x400.png" alt="">
+					</div>
+					<div class="items__body">
+						<div class="items__label">Заголовок</div>
+						<div class="items__text">
+							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis nulla reprehenderit enim dolores
+							repellat corporis provident veritatis possimus, odit sunt quidem quisquam, quas repudiandae?
+							Molestias, id ex? Optio, voluptates accusamus.
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+</body>
+
+
+</html>
