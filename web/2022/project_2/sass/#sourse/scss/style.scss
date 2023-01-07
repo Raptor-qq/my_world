@@ -1,0 +1,805 @@
+//<МИКСИНЫ>===================================================================================================
+@mixin flexbox() {display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;font-size:14px;}
+	//<МИКСИНЫ>===================================================================================================
+
+//<ШРИФТЫ>==============================================================================================
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+//<ШРИФТЫ>==============================================================================================
+
+//<Шрифты по умолчанию>==========================================================================================
+$fontfamily:"Lato";
+//<Шрифты по умолчанию>==========================================================================================
+
+//<ПЕРЕМЕННЫЕ>==================================================================================
+//$minwidth:320px;
+//$mw:1103px;
+//<ПЕРЕМЕННЫЕ>==================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>========================================================================
+@import "nullstyle.scss";
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>========================================================================
+
+//<ОБОЛОЧКА>=====================================================================================================
+.wrapper{
+	//width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	//display: flex;
+	//flex-direction: column;
+}
+//<ОБОЛОЧКА>=====================================================================================================
+
+//</ОСНОВНАЯ СЕТКА>=================================================================================
+.container {
+	max-width: 1130px;
+	padding: 0px 15px;
+	margin: 0 auto;
+	//@media (max-width:1103px) {max-width: 970px;}
+	//@media (max-width:992px) {max-width: 750px;}
+	//@media (max-width:767px){max-width: none;}
+}
+//</ОСНОВНАЯ СЕТКА>=================================================================================
+
+//<ibg>=====================================================================================================
+.ibg {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	img{display: none;}
+}
+//<Sliders>=====================================================================================================
+.slick-slider{position: relative;
+	.slick-track, .slick-list {}
+	.slick-list{overflow: hidden;}
+	.slick-track{display: flex;align-items: flex-start;}
+	.slick-slide{}
+	.slick-dots{
+		padding: 100px 0px 0px 0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		li{margin: 0px 5px;
+			button{
+				font-size: 0;
+				width: 11px;
+				height: 11px;
+				border-radius: 50%;
+				border: 1px solid #c8c8c8;
+				background-color: transparent;
+			}
+			&.slick-active{
+				button{
+					background-color: #a9afb3;
+				}
+			}
+		}
+	}
+}
+
+
+html, body {
+	font-family: $fontfamily;
+}
+
+.page {
+position: absolute;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+display: flex;
+flex-direction: column;
+}
+
+.main-screen {
+flex: 1 0 100%;
+position: relative;
+	&__bg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+}
+
+.header {
+position: absolute;
+width: 100%;
+z-index: 50;
+left: 0;
+top: 35px;
+	&__row {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 85px;
+	}
+
+	&__menu {
+	}
+
+	&__logo {
+		position: absolute;
+		left: 50%;
+		top: 0;
+		z-index: 2;
+		transform: translate3d(-50%, 0px, 0px);
+	}
+
+	@media (max-width: 767px) {
+		top: 15px;
+	}
+}
+
+.menu {
+	&__icon {
+	}
+
+	&__body {
+	}
+
+	&__list {
+		display: flex;
+		li {
+			position: relative;
+			padding: 0px 37.5px;
+			&:nth-child(2){
+				padding: 0px 110px 0px 37.5px;
+			}
+			&:nth-child(3){
+				padding: 0px 37.5px 0px 110px;
+			}
+			&::after{
+				content: '';
+				width: 2px;
+				height: 2px;
+				background-color: #4d4959;
+				border-radius: 50%;
+				position: absolute;
+				right: 0;
+				top: 50%;
+				margin: 2px 0px 0px 0px;
+			}
+
+			&:nth-child(2),
+			&:nth-child(4){
+				&::after{display: none;}
+			}
+		}
+	}
+
+	&__link {
+		font-size: 13px;
+		font-weight: 700;
+		letter-spacing: 2.6px;
+		text-transform: uppercase;
+		color: #4d4959;
+	}
+}
+
+.icon-menu {
+		display: none;	// Скрыть меню бургер для всех разрешений, которые выше 767px
+}
+
+@media (max-width:767px){
+
+//<МЕНЮ-БУРГЕР>=====================================================================================================
+
+.icon-menu {
+	display: block; // Показать меню-бургер для разрешений ниже  767px
+	position: absolute;
+	top: 18px;
+	right: 10px;
+	width: 30px;
+	height: 20px;
+	z-index: 3;		// Индекс больше, чем у плашки
+	}
+
+	.icon-menu::before,	// Верхняя линия меню-бургера
+	.icon-menu::after {	// Нижняя линия меню-бургера
+	content: '';
+	background-color: #000;
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	left: 0;
+	transition: all 0.3s ease 0s;		// анимация иконки меню
+}
+
+.icon-menu span {
+	position: absolute;
+	background-color: #000;	// Средняя линия меню-бургера
+	width: 100%;
+	height: 2px;
+	left: 0;
+	top: 9px;						// Расположение средней линии
+	transition: all 0.3s ease 0s;		// анимация иконки меню
+}
+
+	.icon-menu::before {
+	top: 0;							// Расположение верхней линии
+}
+
+	.icon-menu::after {
+	bottom: 0;						// Расположение нижней линии
+}
+
+	.icon-menu.active::before {		// Делаем крестик из верхней линии
+	transform: rotate(45deg);
+	background-color: #fff;
+	top: 9px;
+}
+
+	.icon-menu.active::after {		// Делаем крестик из нижней линии
+	transform: rotate(-45deg);
+	background-color: #fff;
+	bottom: 9px;
+}
+
+	.icon-menu.active span {		// Делаем крестик, убираем среднюю линию
+	transform: scale(0);
+	background-color: #fff;
+	}
+
+//<МЕНЮ-БУРГЕР>=====================================================================================================
+
+	body.lock {
+	overflow: hidden;	// При открытом меню блокируется скролл
+}
+
+	.header__row {
+	height: 50px;	// Высота шапки
+}
+
+	.header__logo {
+	flex: 0 0 44px;	// Уменьшение логотипа
+}
+
+	.menu__body {
+	position: fixed;
+	top: -100%;		// Изначальное положение меню - выше экрана, его не видно
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;	// Добавляем скролл на маленьком экране
+	background-color: #4d4959;
+	padding: 150px 0px 0px 0px;	// Отступы меню
+	transition: all 0.3s ease 0s;		// анимация меню
+}
+
+	.menu__body.active {
+	top: 0;		// При нажатии появляется меню
+}
+
+.menu__list {
+	text-align: center;
+	display: block;
+
+	li {
+		padding: 0px 0px 65px 0px;
+		&:nth-child(2),
+		&:nth-child(3) {
+			padding: 0px 0px 65px 0px;
+
+		&::after {
+				display: block;
+			}
+		}
+
+		&:nth-child(4) {
+			padding: 0;
+		}
+
+		&:after{
+			width: 3px;
+			height: 3px;
+			background-color: #fff;
+			right: 50%;
+			top: 52px;
+			margin: 2px 0px 0px 0px;
+		}
+	}
+}
+
+.menu__link {
+	color: #fff;
+	font-size: 24px;
+}
+}
+
+//<content>=====================================================================================================
+
+.content {
+}
+
+.generation {
+	padding: 120px 0px;
+	background-color: #f7f7f7;
+
+	&__block {
+	}
+
+	@media (max-width:900px) {
+		padding: 80px 0px;
+	}
+
+	@media (max-width:600px) {
+		padding: 30px 0px;
+	}
+}
+
+.block {
+text-align: center;
+
+	&__icon {
+		margin: 0px 0px 34px 0px;
+	}
+
+	&__title {
+		font-size: 18px;
+		font-weight: 700;
+		letter-spacing: 3.6px;
+		text-align: center;
+		color: #353738;
+		margin: 0px 0px 35px 0px;
+		text-transform: uppercase;
+	}
+
+	&__text {
+		font-size: 18px;
+		line-height: 1.89;
+		color: #848789;
+		&_j {
+			font-size: 16px;
+			line-height: 1.88;
+			text-align: justify;
+			&::after {
+				content: '';
+				display: block;
+				margin: 40px auto 0px auto;
+				width: 50px;
+				height: 1px;
+				background-color: #ebebeb;
+			}
+		}
+	}
+
+	@media (max-width:1500px) {
+		&__text {
+			&_j {
+				&::after {
+					margin: 15px auto 0px auto;
+				}
+			}
+		}
+	}
+}
+
+//<>=====================================================================================================
+
+.brands {
+
+	&__row {
+		display: flex;
+	}
+
+	&__column {
+		flex: 0 1 33.333%;
+
+		&_b {
+			flex: 0 1 66.667%;
+		}
+	}
+
+	&__item {
+	}
+
+	&__content {
+		padding: 70px 65px 105px 65px;
+		position: relative;
+		&::after {					// Стрелочка под блоком
+			content: '';
+			position: absolute;
+			bottom: -10px;
+			left: 50%;
+			margin: 0px 0px 0px -10px;
+			width: 0;
+			height: 0;
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			border-top: 10px solid #fff;
+		}
+	}
+
+	&__image {
+		padding: 0px 0px 37.5% 0px;		// проценнтным отступом вниз устанавливаем размер картинки
+	}
+
+	@media (max-width:1500px) {
+		&__content {
+		padding: 30px 40px 40px 40px;
+		}
+	}
+
+	@media (max-width:1100px) {
+		&__row {
+			flex-direction: column;
+		}
+	}
+
+	@media (max-width:1100px){
+	&__second {
+		display: flex;
+		.brands__column {
+			&:nth-child(1){
+				order: 2;
+			}
+			&:nth-child(2){
+				order: 1;
+			}
+		}
+	}
+}
+}
+
+.item {		// Кнопка на картинках
+height: 100%;
+display: block;
+position: relative;
+
+	&__logo {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		display: flex;
+		flex-direction: column;
+		transition: 0.3s 0s;
+		justify-content: center;
+		align-items: center;
+		z-index: 2;
+		background-color: #64c29e88;
+		opacity: 0;			// Изначально кнопку не видно
+		visibility: hidden;
+		span {
+			display: block;
+			font-weight: 700;
+			letter-spacing: 2.8px;
+			color: #fff;
+			text-transform: uppercase;
+			margin: 14px 0px 0px 0px;
+		}
+	}
+
+	&__image {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+
+	&:hover {		// При наведении появляется кнопка
+		.item__logo {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	@media (max-width:1100px) {		// На маленькой ширине кнопку видно всегда
+		height: auto;
+		padding: 0px 0px 70% 0px;
+		.item__logo {
+		opacity: 0.5;
+		visibility: visible;
+		}
+	}
+}
+
+//<>=====================================================================================================
+
+.slider {
+background-color: #f7f7f7;
+padding: 124px 0px 68px 0px;
+text-align: center;
+
+	&__body {
+	}
+
+	&__item {
+	}
+
+	&__icon {
+	}
+
+	&__title {
+		font-size: 18px;
+		font-weight: 700;
+		letter-spacing: 1.8px;
+		color: #353738;
+		margin: 37px 0px 27px 0px;
+
+		span {
+			color: #848789;
+			opacity: 0.5;
+		}
+	}
+
+	&__text {
+		font-size: 24px;
+		font-style: italic;
+		line-height: 1.42;
+		color: #848789;
+		margin: 0px 0px 104px 0px;
+	}
+}
+
+//<>=====================================================================================================
+
+.shop {
+
+	&__body {
+		display: flex;
+	}
+
+	&__column {		// Самая маленькая колонка с картинкой
+		flex: 0 1 16.666%;
+		&_b {
+			flex: 0 1 33.333%;		// Колонка по центру с двумя картинками
+		}
+	}
+
+	&__block {
+	}
+
+	&__footer {
+		background-color: #282f35;
+		padding: 75px 0;
+		text-align: center;
+		display: flex;
+	}
+
+	&__btn {
+		display: inline-block;
+		border: solid 1px rgba(255, 255, 255, 0.5);
+		opacity: 1;
+		cursor: pointer;
+		position: relative;
+		transition: all 0.5s;
+		height: 50px;
+		font-weight: 700;
+		letter-spacing: 2.8px;
+		text-align: center;
+		color: #fff;
+		line-height: 3.4;
+		padding: 0 57px;
+	}
+
+	.btn::before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		background-color: rgba(136, 122, 122, 0.1);
+		transition: all 0.3s;
+	}
+	.btn:hover::before {
+		opacity: 0;
+		transform: scale(0.5, 0.5);
+	}
+	.btn::after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		opacity: 0;
+		transform: all 0.3s;
+		border: 1px solid rgba(255,255,255,0.5);
+		transform: scale(1.2, 1.2);
+	}
+	.btn:hover::after {
+		opacity: 1;
+		transform: scale(1, 1);
+	}
+
+	@media (max-width:1100px) {		// На маленькой ширине картинки переносятся
+		&__body {
+			flex-wrap: wrap;
+		}
+		&__column {
+			flex: 0 1 50%;			// Маленькая колонка занимает половину ширины
+			&__body {
+			&_b {
+				flex: 0 1 100%;		// Большая колонка занимает всю ширину
+			}
+		}
+		&__footer {
+			padding: 50px 0;
+		}
+		&__btn {
+			padding: 0 30px;
+		}
+	}
+}
+}
+.block-shop {
+	height: 100%;		// Процент от высоты самой высокой картинки
+
+	&__row {
+		display: flex;
+	}
+
+	&__column {
+		flex: 0 1 50%;		// Делим колонку с маленькими картинками
+	}
+
+	&__item {
+		height: auto;		// Высота подстраивается к самой высокой картинке
+		padding: 0px 0px 50% 0px;		// Процентный отступ для широкой картинки
+		&_b {
+			padding: 0px 0px 200% 0px;		// Так как нет контента, к которому можно привязаться, задается высота для самой высокой картинки
+		}
+		&_l {
+			padding: 0px 0px 100% 0px;		// Процентный отступ для маленьких картинок
+		}
+	}
+}
+.block-shop-column {
+}
+
+//<>=====================================================================================================
+
+.subscribe {
+
+	&__body {
+		max-width: 540px;
+		margin: 0 auto;
+		text-align: center;
+		padding: 110px 0;
+	}
+
+	&__logo {
+	}
+
+	&__title {
+		font-size: 24px;
+		font-style: italic;
+		line-height: 1.42;
+		text-align: center;
+		color: #848789;
+		margin: 39px 0px 35px 0px;
+	}
+
+	&__form {
+		display: flex;
+	}
+
+	&__form-mail {
+		flex: 1 1 auto;		// Автоматическое увеличение ширины поля ввода
+		margin: 0px 8px 0px 0px;
+	}
+
+	&__form-go {
+		flex: 0 0 126px;		// Фиксированная ширина кнопки
+	}
+
+	@media (max-width:750px) {
+		&__body {
+		padding: 50px 0;
+		}
+	}
+
+	@media (max-width:500px) {
+		&__form {
+			flex-direction: column;
+		}
+		&__form-mail {
+			margin: 0px 0px 8px 0px;
+	}
+}
+}
+.subscribe__btn {
+	width: 100%;		// Кнопка растягивается на всю ширину блока
+	height: 69px;
+	background-color: #64c29e;
+	padding: 0 45px;
+	text-align: center;
+	line-height: 2.8;
+	font-size: 24px;
+	font-weight: 300;
+	color: #fff;
+}
+
+input {
+		width: 100%;		// Поле ввода растягивается на всю ширину
+		height: 69px;
+		border: solid 1px #d3d7d9;
+		background-color: #fff;
+		font-size: 20px;
+		font-style: italic;
+		line-height: 1.2;
+		color: #929292;
+		padding: 26px;
+		&::placeholder {		// Анимация исчезновения подсказки
+			opacity: 1; 
+			transition: opacity 0.3s ease;
+		}
+		&:focus {
+			&::placeholder {		// Анимация исчезновения подсказки
+				opacity: 0;
+			}
+			color: #000;
+			font-style: normal;
+		}
+}
+
+//<>=====================================================================================================
+
+.footer {
+	background-color: #f7f7f7;
+	&__body {
+		display: flex;
+		align-items: center;
+		padding: 99px 0px 103px 0px;
+	}
+
+	&__address {
+		flex: 1 1 33.333%;
+		font-style: italic;
+		line-height: 1.29;
+		color: #848789;
+		span {
+			font-size: 16px;
+			font-weight: 700;
+		}
+	}
+
+	&__links {
+		flex: 1 1 33.333%;
+		text-align: center;
+		margin: 0px -15px;
+	}
+
+	&__item {
+		padding: 0 15px;
+	}
+
+	&__Handcrafted {
+		flex: 1 1 33.333%;
+			span {
+	line-height: 2.3;
+	align-items: center;
+			}
+		text-align: right;
+	}
+
+	&__yebo {
+	}
+
+	@media (max-width:1500px) {
+		&__body {
+			padding: 50px 0px 50px 0px;
+		}
+	}
+
+	@media (max-width:700px) {
+		&__body {
+		flex-direction: column;
+		}
+		&__address {
+			text-align: center;
+		}
+		&__links {
+			margin: 30px 0	;
+		}
+	}
+}
