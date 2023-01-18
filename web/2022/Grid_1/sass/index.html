@@ -1,0 +1,64 @@
+<!--Сообщаем браузеру, как стоит обрабатывать эту страницу-->
+<!DOCTYPE html>
+<!--Оболочка документа, указываем язык содержимого-->
+<html lang="ru">
+<!--Заголовок страницы, контейнер для других важных данных (не отображается)-->
+
+<head>
+	<!--Название страницы-->
+	<title> Grid Layout - Определение сетки </title>
+	<!--Подключаем CSS-->
+	<link rel="stylesheet" href="css/style.css">
+	<!--Кодировка страницы-->
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+	<!-- Адаптивность для смартфонов. 1 знач – изначальный масштаб страницы. 2 знач – максимальный масштаб страницы. 3 знач – Запрещается масштабирование контента. -->
+	<meta name="viewport" content="width=device-width, initial-scake=1.0, maximum-scale=1.0, user-scalable=0" />
+	<!-- Отключает принудительную ссылку у номера телефона на iOS -->
+	<meta name="format-detection" content="telephone=no">
+</head>
+
+<!--Отображаемое тело страницы-->
+
+<body>
+	<div class="wrapper">
+		<h1>GRID Layout - Определение сетки</h1>
+		<div class="content">
+			<div class="grid">
+				<div class="grid__body">
+					<div class="grid__item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo sed sit quasi
+						dolores corrupti neque amet qui aliquid assumenda possimus quaerat</div>
+					<div class="grid__item">2</div>
+					<div class="grid__item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, odio.</div>
+					<div class="grid__item">4</div>
+					<div class="grid__item">5</div>
+					<div class="grid__item">6</div>
+				</div>
+			</div>
+			<h2>Имена областей</h2>
+			<div class="grid-wrapper">
+				<header class="grid-header">
+					Шапка
+				</header>
+				<aside class="grid-side">
+					Сайдбар
+				</aside>
+				<main class="grid-content">
+					Контент
+				</main>
+			</div>
+			<h2>Неявная сетка</h2>
+			<div class="grid-auto">
+				<div class="grid-auto__item">1</div>
+				<div class="grid-auto__item">2</div>
+				<div class="grid-auto__item">3</div>
+				<div class="grid-auto__item">4</div>
+				<div class="grid-auto__item">5</div>
+				<div class="grid-auto__item">6</div>
+				<div class="grid-auto__item">7</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+
+</html>

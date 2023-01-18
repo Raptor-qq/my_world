@@ -1,0 +1,120 @@
+//<МИКСИНЫ>===================================================================================================
+@mixin flexbox() {display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;font-size:14px;}
+	//<МИКСИНЫ>===================================================================================================
+
+//<ШРИФТЫ>==============================================================================================
+
+//<ШРИФТЫ>==============================================================================================
+
+//<Шрифты по умолчанию>==========================================================================================
+
+//<Шрифты по умолчанию>==========================================================================================
+
+//<ПЕРЕМЕННЫЕ>==================================================================================
+
+//<ПЕРЕМЕННЫЕ>==================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>========================================================================
+@import "nullstyle.scss";
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>========================================================================
+
+//<ОБОЛОЧКА>=====================================================================================================
+.wrapper{
+	max-width: 100%;
+	min-height: 100%;
+	margin: 0 auto;
+	background-color: rgb(54, 50, 50);
+}
+//<ОБОЛОЧКА>=====================================================================================================
+
+//</ОСНОВНАЯ СЕТКА>=================================================================================
+body{
+}
+h1 {
+	font-size: 45px;
+	color: #fff;
+	padding: 10px;
+}
+.content {
+	font-size: 45px;
+	color: #fff;
+	margin: 10px 0px 0px 20px;
+}
+.grid {
+	max-width: 1000px;
+	position: relative;
+
+		&__body {
+			display: grid;
+			grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+		}
+
+		&__item {
+			text-align: center;
+			border: 2px dashed rgba(255, 255, 255, 0.2);
+			padding: 30px;
+		}
+}
+
+h2{
+	font-size: 45px;
+	color: #fff;
+	padding: 10px;
+	margin: 30px 0px 0px 0px;
+}
+.grid-wrapper {
+	max-width: 1000px;
+	display: grid;
+	grid-template: 
+	[start] "header header" 100px [row2]		// Сокращенный вариант grid-temlate-area
+	[row2] "side content" [row-end] / 250px 1fr;
+	/*
+	grid-template-columns: 250px 1fr;
+	grid-template-rows: 100px 1fr;
+	grid-template-areas: 
+	"header header"
+	"side content";
+	*/
+}
+.grid-header {
+	padding: 30px;
+	border: 2px dashed rgba(255, 255, 255, 0.2);
+	margin: 0px 0px 15px 0px;
+}
+
+.grid-side {
+	padding: 30px;
+	border: 2px dashed rgba(255, 255, 255, 0.2);
+	margin: 0px 0px 15px 0px;
+}
+.grid-content {
+	padding: 30px;
+	border: 2px dashed rgba(255, 255, 255, 0.2);
+	margin: 0px 0px 15px 0px;
+}
+
+.grid-header {
+	grid-area: header;		// Присоение имени для grid-template-areas
+}
+.grid-side {
+	grid-area: side;		// Присоение имени для grid-template-areas
+}
+.grid-content {
+	grid-area: content;		// Присоение имени для grid-template-areas
+}
+
+.grid-auto {
+	max-width: 1000px;
+display: grid;
+grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+grid-auto-rows: 200px;		// Размер для неявных строк
+grid-auto-columns: 300px;		// Размер для неявных столбцов
+	&__item {
+		text-align: center;
+		border: 2px dashed rgba(255, 255, 255, 0.2);
+		padding: 30px;
+	}
+}
+

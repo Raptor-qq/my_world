@@ -700,15 +700,14 @@ input:focus::placeholder {
   font-weight: 700;
 }
 .footer__links {
-  flex: 1 1 33.333%;
+  flex: 0 1 33.333%;
   text-align: center;
-  margin: 0px -15px;
 }
 .footer__item {
   padding: 0 15px;
 }
 .footer__Handcrafted {
-  flex: 1 1 33.333%;
+  flex: 0 1 33.333%;
   text-align: right;
 }
 .footer__Handcrafted span {
