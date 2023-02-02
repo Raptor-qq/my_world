@@ -1,0 +1,142 @@
+<!--Сообщаем браузеру, как стоит обрабатывать эту страницу-->
+<!DOCTYPE html>
+<!--Оболочка документа, указываем язык содержимого-->
+<html lang="ru">
+<!--Заголовок страницы, контейнер для других важных данных (не отображается)-->
+
+<head>
+	<!--Название страницы-->
+	<title> Видео . Аудио </title>
+	<!--Подключаем CSS-->
+	<link rel="stylesheet" href="css/style.css">
+	<!--Кодировка страницы-->
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+	<!-- Адаптивность для смартфонов. 1 знач – изначальный масштаб страницы. 2 знач – максимальный масштаб страницы. 3 знач – Запрещается масштабирование контента. -->
+	<meta name="viewport" content="width=device-width, initial-scake=1.0, maximum-scale=1.0, user-scalable=0" />
+	<!-- Отключает принудительную ссылку у номера телефона на iOS -->
+	<meta name="format-detection" content="telephone=no">
+</head>
+
+<!--Отображаемое тело страницы-->
+
+<body>
+	<div class="wrapper">
+		<div class="items">
+			<div class="items__container">
+				<div class="items__body">
+					<div class="item">
+						<div class="item__video">
+							<video poster="img/forest-poster.jpg" controls preload="metadata">
+								<source type="video/webm" src="videos/forest.webm">
+								<source type="video/mp4" src="videos/forest.mp4">
+						</div>
+						<div class="item__text">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sapiente at provident
+							nesciunt, minus, eos assumenda eaque ut alias amet consequatur labore deleniti iusto. Quod quaerat
+							voluptatum perferendis consectetur tempora?
+						</div>
+					</div>
+					<div class="item">
+						<div class="item__video">
+							<video poster="img/forest-poster.jpg" controls preload="metadata">
+								<source type="video/webm" src="videos/forest.webm">
+								<source type="video/mp4" src="videos/forest.mp4">
+						</div>
+						<div class="item__text">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sapiente at provident
+							nesciunt, minus, eos assumenda eaque ut alias amet consequatur labore deleniti iusto. Quod quaerat
+							voluptatum perferendis consectetur tempora?
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sapiente at provident
+							nesciunt, minus, eos assumenda eaque ut alias amet consequatur labore deleniti iusto. Quod quaerat
+							voluptatum perferendis consectetur tempora?
+						</div>
+					</div>
+					<div class="item">
+						<div class="item__video">
+							<iframe src="https://www.youtube.com/embed/C5q0ULg0nmY" title="YouTube video player"
+								frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+								allowfullscreen>
+							</iframe>
+						</div>
+						<div class="item__text">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sapiente at provident
+							nesciunt, minus, eos assumenda eaque ut alias amet consequatur labore deleniti iusto. Quod quaerat
+							voluptatum perferendis consectetur tempora?
+						</div>
+					</div>
+					<div class="item">
+						<div class="item__video">
+							<video poster="img/forest-poster.jpg" controls preload="metadata">
+								<source type="video/webm" src="videos/forest.webm">
+								<source type="video/mp4" src="videos/forest.mp4">
+						</div>
+						<div class="item__text">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sapiente at provident
+							nesciunt, minus, eos assumenda eaque ut alias amet consequatur labore deleniti iusto. Quod quaerat
+							voluptatum perferendis consectetur tempora?
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sapiente at provident
+							nesciunt, minus, eos assumenda eaque ut alias amet consequatur labore deleniti iusto. Quod quaerat
+							voluptatum perferendis consectetur tempora?
+						</div>
+					</div>
+					<div class="item">
+						<audio autoplay muted controls src="audio/Muriel-BobbyRichards.mp3"></audio>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+
+</html>
+
+
+<!-- =========================================================== -->
+
+
+<!--
+src
+Указывает путь к воспроизводимому видеоролику.
+
+width
+Задает ширину области для воспроизведения видеоролика.
+
+height 
+Задает высоту области для воспроизведения видеоролика.
+
+muted
+Выключает аудиодорожку
+
+autoplay
+Видео начинает воспроизводиться автоматически после загрузки страницы.*
+
+controls
+Добавляет панель управления к видеоролику.
+
+loop
+Повторяет воспроизведение видео с начала после его завершения.
+
+poster
+Указывает адрес картинки, которая будет отображаться, 
+пока видео не доступно или не воспроизводится.
+
+preload
+Используется для загрузки видео вместе с загрузкой веб-страницы.
+
+Этот атрибут предназначен для того, 
+чтобы дать контролировать загрузку медиафайла. 
+Он может иметь одно из следующих значений:
+- none: указывает, что видео не должно быть предварительно загружено.
+- metadata: указывает, что предварительно загружаются метаданные видео 
+	(например, длина).
+- auto: указывает, что весь видеофайл может быть загружен, 
+	даже если пользователь не должен его использовать.
+- пустая строка: синоним значения auto.
+
+Если не задано, значение атрибута определяется браузером 
+по умолчанию (то есть, каждый браузер имеет по умолчанию 
+значение данного атрибута). 
+Спецификация рекомендует использовать metadata.
+ -->
