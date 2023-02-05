@@ -1,28 +1,5 @@
 //<МИКСИНЫ>===================================================================================================
 @mixin flexbox() {display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;font-size:14px;}
-// Адаптивное свойство
-$maxWidth: 1920;
-$maxWidthContainer: 1200;
-
-@mixin adaptive-value($property, $startSize, $minSize, $type) {
-	$addSize: $startSize - $minSize;
-	@if $type==1 {
-		// Отзывчивость внутри контенера (меньше контейнера)
-		#{$property}: $startSize + px;
-		@media (max-width: #{$maxWidthContainer +  px}) {
-			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
-		}
-	} @else if $type==2 {
-		// Отзывчивость за пределами контенера (больше контейнера) Когда сайт открывается на разрешениях, больше макетного
-		#{$property}: $startSize + px;
-		@media (min-width: #{$maxWidthContainer +  px}) {
-			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
-		}
-	} @else {
-		// Отзывчивость всегда, по все ширине
-		#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
-	}
-}
 //<МИКСИНЫ>===================================================================================================
 
 //<ШРИФТЫ>==============================================================================================
@@ -42,8 +19,10 @@ $maxWidthContainer: 1200;
 
 //<ОБОЛОЧКА>=====================================================================================================
 .wrapper{
-	min-height: 100%;
+	min-height: 100vh;
 	overflow: hidden;
+	display: flex;
+	flex-direction: column;
 }
 //<ОБОЛОЧКА>=====================================================================================================
 
@@ -53,70 +32,85 @@ html {
 
 body{
 	height: 100%;
-	line-height: 1;
 	background-color: #333;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 	color: #fff;
+	font-size: 20px;
 }
 
-.page {
-padding: 50px 0;
+.fullscreen {
+	min-height: 100vh;
+	background-color: #666;
+	display: flex;
+	padding: 20px 0px;
 
-	&__block {
-		margin: 0px 0px 50px 0px;
-	}
+		&__body {
+			flex: 1 1 auto;
+			max-width: 1000px;
+			margin: 0 auto;
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding: 0px 20px;
+		}
+
+		&__title {
+			font-size: 50px;
+			margin: 0px 0px 20px 0px;
+		}
+
+		&__text {
+			font-size: 25px;
+			margin: 0px 0px 20px 0px;
+		}
+
+		&__link {
+			display: inline-block;
+			line-height: 50px;
+			text-transform: uppercase;
+			color: #fff;
+			text-decoration: none;
+			letter-spacing: 2px;
+			background-color: #77608d;
+			align-self: center;
+			padding: 0px 20px;
+		}
 }
 
-.block {
-
-	&_one &__body {
-		background-color: #794f45;
-	}
-
-	&_two &__body {
-		background-color: #77608d;
-	}
-
-	&_three &__body {
-		background-color: #7a956b;
-	}
-
-	&__container {
-		max-width: 1200px;
-		padding: 0px 15px;
-		margin: 0px auto;
-	}
-
-	&__body {
-		@include adaptive-value("padding", 50, 20, 1); // "Изменяемое значение", начальное макетное значение, конечное значение, режим изменения (выбрать из миксина)
-	}
-
-	&__title {
-		line-height: 130%;
-		@include adaptive-value("font-size", 30, 20, 1);
-		@include adaptive-value("margin-bottom", 20, 10, 1);
-	}
-
-	&__text {
-		line-height: 150%;
-		@include adaptive-value("font-size", 16, 14, 1);
-	}
+.fullscreen_two {
+	background-color: #794f45;
 }
 
-@media (max-width:1200px) {
-	.block__body {
-		// 20px -минимальный размер паддинга, который нужен на разрешении 1200px
-		// дальше - добавочное число, где от изначального значения в 50px отнимаем - минимальное - 20px
-		// все это умножается на следующее значение... От ширины вьюпорта отнимаем минимальную 
-		// ширину экрана (320px) и делим все это на ширину ограничивающего контейнер за вычетом 320px
-		//padding: calc(20px + (50 - 20) * ((100vw - 320px) / (1200 - 320)));
-	}
-	
-	.block__title {
-		//font-size: calc(20px + (30 - 20) * ((100vw - 320px) / (1200 - 320)));
-		//margin-bottom: calc(10px + (20 - 10) * ((100vw - 320px) / (1200 - 320)));
-	}
+.fullscreen_bg {
+	background: url('../img/bg.jpg') center / cover no-repeat fixed;
+}
 
-	.block__text {
-		//font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1200 - 320)));
-	}
+.content {
+}
+
+.contnent {
+
+		&__body {
+			max-width: 1000px;
+			margin: 0 auto;
+			padding: 30px 20px;
+			p {
+				margin: 0px 0px 20px 0px;
+				&:last-child {
+					margin: 0px;
+				}
+			}
+		}
+}
+
+.footer {
+	background-color: #111;
+	text-align: center;
+
+		&__body {
+			max-width: 1000px;
+			margin: 0 auto;
+			padding: 30px 20px;
+		}
 }

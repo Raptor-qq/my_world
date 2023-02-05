@@ -70,67 +70,82 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .wrapper {
-  min-height: 100%;
+  min-height: 100vh;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 body {
   height: 100%;
-  line-height: 1;
   background-color: #333;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   color: #fff;
+  font-size: 20px;
 }
 
-.page {
-  padding: 50px 0;
+.fullscreen {
+  min-height: 100vh;
+  background-color: #666;
+  display: flex;
+  padding: 20px 0px;
 }
-.page__block {
-  margin: 0px 0px 50px 0px;
+.fullscreen__body {
+  flex: 1 1 auto;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 20px;
+}
+.fullscreen__title {
+  font-size: 50px;
+  margin: 0px 0px 20px 0px;
+}
+.fullscreen__text {
+  font-size: 25px;
+  margin: 0px 0px 20px 0px;
+}
+.fullscreen__link {
+  display: inline-block;
+  line-height: 50px;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 2px;
+  background-color: #77608d;
+  align-self: center;
+  padding: 0px 20px;
 }
 
-.block_one .block__body {
+.fullscreen_two {
   background-color: #794f45;
 }
-.block_two .block__body {
-  background-color: #77608d;
+
+.fullscreen_bg {
+  background: url("../img/bg.jpg") center/cover no-repeat fixed;
 }
-.block_three .block__body {
-  background-color: #7a956b;
+
+.contnent__body {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px 20px;
 }
-.block__container {
-  max-width: 1200px;
-  padding: 0px 15px;
-  margin: 0px auto;
+.contnent__body p {
+  margin: 0px 0px 20px 0px;
 }
-.block__body {
-  padding: 50px;
+.contnent__body p:last-child {
+  margin: 0px;
 }
-@media (max-width: 1200px) {
-  .block__body {
-    padding: calc(20px + 30 * ((100vw - 320px) / 880));
-  }
+
+.footer {
+  background-color: #111;
+  text-align: center;
 }
-.block__title {
-  line-height: 130%;
-  font-size: 30px;
-  margin-bottom: 20px;
-}
-@media (max-width: 1200px) {
-  .block__title {
-    font-size: calc(20px + 10 * ((100vw - 320px) / 880));
-  }
-}
-@media (max-width: 1200px) {
-  .block__title {
-    margin-bottom: calc(10px + 10 * ((100vw - 320px) / 880));
-  }
-}
-.block__text {
-  line-height: 150%;
-  font-size: 16px;
-}
-@media (max-width: 1200px) {
-  .block__text {
-    font-size: calc(14px + 2 * ((100vw - 320px) / 880));
-  }
+.footer__body {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px 20px;
 }
