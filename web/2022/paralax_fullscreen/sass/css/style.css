@@ -1,0 +1,136 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  font-size: 14px;
+  line-height: 1;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+}
+
+body {
+  height: 100%;
+  line-height: 1;
+  background-color: #333;
+  color: #fff;
+}
+
+.page {
+  padding: 50px 0;
+}
+.page__block {
+  margin: 0px 0px 50px 0px;
+}
+
+.block_one .block__body {
+  background-color: #794f45;
+}
+.block_two .block__body {
+  background-color: #77608d;
+}
+.block_three .block__body {
+  background-color: #7a956b;
+}
+.block__container {
+  max-width: 1200px;
+  padding: 0px 15px;
+  margin: 0px auto;
+}
+.block__body {
+  padding: 50px;
+}
+@media (max-width: 1200px) {
+  .block__body {
+    padding: calc(20px + 30 * ((100vw - 320px) / 880));
+  }
+}
+.block__title {
+  line-height: 130%;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+@media (max-width: 1200px) {
+  .block__title {
+    font-size: calc(20px + 10 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 1200px) {
+  .block__title {
+    margin-bottom: calc(10px + 10 * ((100vw - 320px) / 880));
+  }
+}
+.block__text {
+  line-height: 150%;
+  font-size: 16px;
+}
+@media (max-width: 1200px) {
+  .block__text {
+    font-size: calc(14px + 2 * ((100vw - 320px) / 880));
+  }
+}
