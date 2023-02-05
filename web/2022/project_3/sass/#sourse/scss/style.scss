@@ -1,6 +1,29 @@
 //<МИКСИНЫ>===================================================================================================
 @mixin flexbox() {display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;font-size:14px;}
-	//<МИКСИНЫ>===================================================================================================
+// Адаптивное свойство
+$maxWidth: 1920;
+$maxWidthContainer: 1223;
+
+@mixin adaptive-value($property, $startSize, $minSize, $type) {
+	$addSize: $startSize - $minSize;
+	@if $type==1 {
+		// Отзывчивость внутри контенера (меньше контейнера)
+		#{$property}: $startSize + px;
+		@media (max-width: #{$maxWidthContainer +  px}) {
+			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+		}
+	} @else if $type==2 {
+		// Отзывчивость за пределами контенера (больше контейнера) Когда сайт открывается на разрешениях, больше макетного
+		#{$property}: $startSize + px;
+		@media (min-width: #{$maxWidthContainer +  px}) {
+			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+		}
+	} @else {
+		// Отзывчивость всегда, по все ширине
+		#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+	}
+}
+//<МИКСИНЫ>===================================================================================================
 
 //<ШРИФТЫ>==============================================================================================
 @import "fonts.scss";
@@ -84,13 +107,13 @@ html, body {
 
 		&__title {
 			max-width: 35%;
-			font-size: 60px;
+			@include adaptive-value("font-size", 80, 60, 0);
 			font-weight: 700;
 			line-height: 0.8;
 			letter-spacing: -3px;
 			text-align: left;
 			color: #fff;
-			margin: 0px 0px 60px 0px;
+			@include adaptive-value("margin-bottom", 60, 30, 0);
 			span {
 				color: #ffc600;
 			}
@@ -111,67 +134,23 @@ html, body {
 			li {
 				position: relative;
 				margin: 0px 40px 0px 0px;
-				&:nth-child(1) {
 					&:hover {
 						&::after {
 							content: '';
-							width: 53px;
+							width: 100%;
 							height: 1px;
 							background-color: #ffc600;
 							border-radius: 50%;
 							position: absolute;
 							top: 102%;
-							left: -3%;
+							left: 0;
 						}
 					}
-				}
-				&:nth-child(2) {
-					&:hover {
-						&::after {
-							content: '';
-							width: 108px;
-							height: 1px;
-							background-color: #ffc600;
-							border-radius: 50%;
-							position: absolute;
-							top: 102%;
-							left: -1%;
-						}
-					}
-				}
-				&:nth-child(3) {
-					&:hover {
-						&::after {
-							content: '';
-							width: 64px;
-							height: 1px;
-							background-color: #ffc600;
-							border-radius: 50%;
-							position: absolute;
-							top: 102%;
-							left: -1%;
-						}
-					}
-				}
-				&:nth-child(4) {
-					&:hover {
-						&::after {
-							content: '';
-							width: 38px;
-							height: 1px;
-							background-color: #ffc600;
-							border-radius: 50%;
-							position: absolute;
-							top: 102%;
-							left: -2%;
-						}
-					}
-				}
 			}
 		}
 
 		&__link {
-			font-size: 18px;
+			@include adaptive-value("font-size", 20, 16, 0);
 			text-align: left;
 			color: #ffc600;
 			&:hover {
@@ -185,16 +164,12 @@ html, body {
 		flex-direction: column;
 		align-items: start;
 			li{
-				margin: 0px 0px 10px 0px;
+				margin: 0px 0px 15px 0px;
 			}
 	}
 	
 	.mainblock {
 		top: 9%;
-
-		&__title {
-			margin: 0px 0px 30px 0px;
-		}
 	}
 }
 
@@ -208,8 +183,8 @@ html, body {
 
 .icon-menu {
 	display: block; // Показать меню-бургер для разрешений ниже  767px
-	position: absolute;
-	top: -20px;
+	position: fixed;
+	top: 30px;
 	right: 30px;
 	width: 30px;
 	height: 20px;
@@ -298,11 +273,10 @@ body.lock {
 	align-items: center;
 	li {
 	margin: 0px 0px 55px 0px;
-	&:nth-child(1) {
 		&:hover {
 			&::after {
 				content: '';
-				width: 64px;
+				width: 100%;
 				height: 1px;
 				background-color: #ffc600;
 				border-radius: 50%;
@@ -310,57 +284,14 @@ body.lock {
 				top: 95%;
 				left: 0;
 				}
-		}
-	}
-	&:nth-child(2) {
-		&:hover {
-			&::after {
-				content: '';
-				width: 140px;
-				height: 1px;
-				background-color: #ffc600;
-				border-radius: 50%;
-				position: absolute;
-				top: 95%;
-				left: 0;
-				}
-			}
-		}
-	&:nth-child(3) {
-		&:hover {
-			&::after {
-				content: '';
-				width: 81px;
-				height: 1px;
-				background-color: #ffc600;
-				border-radius: 50%;
-				position: absolute;
-				top: 95%;
-				left: 0;
-				}
-			}
-		}
-	&:nth-child(4) {
-		&:hover {
-			&::after {
-				content: '';
-				width: 47px;
-				height: 1px;
-				background-color: #ffc600;
-				border-radius: 50%;
-				position: absolute;
-				top: 95%;
-				left: 0;
-				}
-			}
 		}
 	}
 }
 
 .menu__link {
-color: #ffc600;
-font-size: 24px;
-}
+	color: #ffc600;
+	font-size: 24px;
+	}
 }
 
 //<content>=====================================================================================================
@@ -492,14 +423,14 @@ font-size: 24px;
 	}
 
 	&__title {
-		font-size: 18px;
+		@include adaptive-value("font-size", 18, 22, 1);
 		padding: 0px 0px 19px 0px;
 
 	}
 
 	&__text {
 		text-align: center;
-		font-size: 12px;
+		@include adaptive-value("font-size", 14, 16, 1);
 		font-style: italic;
 		& p {
 			padding: 0px 0px 15px 0px;
@@ -511,16 +442,8 @@ font-size: 24px;
 	.about-items {
 		padding: 40px 0px 0px 0px;
 
-		&__title {
-		font-size: 22px;
-		}
-
 		&__row {
 			justify-content: center;
-		}
-
-		&__text {
-			font-size: 14px;
 		}
 	}
 }
@@ -528,7 +451,8 @@ font-size: 24px;
 //<>=====================================================================================================
 
 .project {
-	padding: 100px 0px 66px 0px;
+	@include adaptive-value("padding-top", 100, 5, 1);
+	@include adaptive-value("padding-bottom", 66, 30, 1);
 
 	&__body {
 	}
@@ -629,12 +553,6 @@ font-size: 24px;
 	}
 }
 
-@media (max-width: 1080px){
-	.project {
-	padding: 50px 0px 66px 0px;
-	}
-}
-
 @media (max-width:450px) {
 	.project__list {
 		flex-wrap: wrap;
@@ -642,9 +560,6 @@ font-size: 24px;
 }
 
 @media (max-width:768px) {
-	.project {
-		padding: 25px 0px 50px 0px;
-		}
 	.image-body__item {
 		flex: 1 0 50%;
 		padding: 0px 0px 45% 0px;
@@ -654,7 +569,7 @@ font-size: 24px;
 //<>=====================================================================================================
 
 .process {
-	padding: 0px 0px 64px 0px;
+	@include adaptive-value("padding-bottom", 64, 5, 1);
 
 	&__strategic {
 		padding: 0px 20px;
@@ -775,9 +690,6 @@ font-size: 24px;
 }
 
 @media (max-width:768px) {
-	.process {
-		margin: 0px 0px 10px 0px;
-	}
 
 	.elements__item {
 		flex-direction: column;
@@ -929,7 +841,8 @@ font-size: 24px;
 //<>=====================================================================================================
 
 .team {
-	padding: 85px 0px 149px 0px;
+	@include adaptive-value("padding-top", 85, 15, 1);
+	@include adaptive-value("padding-bottom", 149, 29, 1);
 
 	&__body {
 		display: flex;
@@ -1014,7 +927,6 @@ font-size: 24px;
 
 @media (max-width:990px) {
 	.team {
-		padding: 35px 0px 79px 0px;
 
 	&__body {
 			flex-direction: column;
@@ -1038,7 +950,6 @@ font-size: 24px;
 
 @media (max-width:552px) {
 	.team {
-		padding: 35px 0px 49px 0px;
 
 	&__rabotyagi {
 		padding: 0 20px;
@@ -1050,7 +961,8 @@ font-size: 24px;
 
 .testimonials {
 background-color: #000;
-padding: 55px 0px 163px 0px;
+@include adaptive-value("padding-top", 55, 15, 1);
+@include adaptive-value("padding-bottom", 163, 43, 1);
 color: #fff;
 
 &__body {
@@ -1141,7 +1053,6 @@ color: #fff;
 
 @media (max-width:768px) {
 	.testimonials {
-		padding: 35px 0px 103px 0px;
 
 	&__text {
 		margin: 64px 20px 0px 0px;
@@ -1151,7 +1062,6 @@ color: #fff;
 
 @media (max-width:425px) {
 	.testimonials {
-		padding: 35px 0px 63px 0px;
 
 		&__block {
 			flex-direction: column;
@@ -1171,7 +1081,9 @@ color: #fff;
 //<>=====================================================================================================
 
 .blogs {
-	padding: 30px 0px 115px 0px;
+	padding-top: 30px;
+	@include adaptive-value("padding-bottom", 115, 20, 1);
+
 	overflow: hidden;
 
 	&__body {
@@ -1317,9 +1229,6 @@ color: #fff;
 }
 
 @media (max-width:1080px) {
-	.blogs {
-		padding: 30px 0px 95px 0px;
-	}
 
 	.post {
 		margin: 0px -35px;
@@ -1331,10 +1240,6 @@ color: #fff;
 }
 
 @media (max-width:768px) {
-	.blogs {
-		padding: 30px 0px 45px 0px;
-	}
-
 	.post {
 		margin: 0px -15px;
 	
@@ -1655,10 +1560,10 @@ padding: 12px 11px 11px 13px;
 			span {
 				color: #ffc600;
 			}
-			font-size: 111px;
+			@include adaptive-value("font-size", 111, 50, 0);
 			font-weight: bold;
 			line-height: 0.8;
-			letter-spacing: -5.55px;
+			@include adaptive-value("letter-spacing", -5.55, -1, 0);
 			position: absolute;
 			top: 55%;
 			left: 0;
@@ -1669,7 +1574,9 @@ padding: 12px 11px 11px 13px;
 }
 
 .footer-body {
-	padding: 122px 10px 45px 26px;
+	padding: 0px 10px 45px 26px;
+	@include adaptive-value("padding-top", 122, 20, 1);
+
 
 	&__title {
 		margin: 0px 0px 43px 0px;
@@ -1742,14 +1649,11 @@ padding: 12px 11px 11px 13px;
 
 				&_text {
 					top: 45%;
-					font-size: 80px;
 				}
 			}
 		}
 
 	.footer-body {
-		padding: 70px 10px 45px 26px;
-
 		text-align: center;
 
 		&__title {
@@ -1768,23 +1672,6 @@ padding: 12px 11px 11px 13px;
 			width: 100%;
 			justify-content: center;
 		}
-	}
-}
-
-@media (max-width:425px) {
-	.footer {
-
-			&__screen {
-				&_text {
-					letter-spacing: normal;
-					top: 45%;
-					font-size: 50px;
-				}
-			}
-		}
-
-	.footer-body {
-		padding: 20px 10px 45px 26px;
 	}
 }
 
