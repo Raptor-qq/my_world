@@ -316,14 +316,14 @@ body.lock {
 			p:nth-child(1) {
 				font-size: 30px;
 				color: #717171;
-				span {
+				&::first-letter {
 					font-size: 60px;
 				}
 			}
 			p:nth-child(2) {
 				font-size: 80px;
 				color: #000;
-				span {
+				&::first-letter {
 					color: #ffc600;
 				}
 			}
@@ -976,10 +976,8 @@ color: #fff;
 		text-align: left;
 		position: relative;
 		margin: 0px 0px 0px 0px;
-		span {
+		&::first-letter {
 			font-size: 52px;
-		}
-		span:nth-child(1) {
 			color: #ffc600;
 		}
 		&::after {
@@ -1107,10 +1105,8 @@ color: #fff;
 		font-weight: 600;
 		text-align: left;
 		position: relative;
-		span {
+		&::first-letter {
 			font-size: 52px;
-		}
-		span:nth-child(1) {
 			color: #ffc600;
 		}
 		&::after {
@@ -1585,7 +1581,7 @@ padding: 12px 11px 11px 13px;
 		font-weight: 700;
 		text-align: left;
 		position: relative;
-		span {
+		&::first-letter {
 			color: #ffc600;
 		}
 	}
