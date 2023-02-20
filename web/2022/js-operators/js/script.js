@@ -473,3 +473,5 @@ console.log(!false && 11 || 18 && !'');
 let name3 = 0;
 console.log(name3 ?? "Без имени")
 // Вернет 0 - ВЕРНО
+
+console.log('15' && '42');
