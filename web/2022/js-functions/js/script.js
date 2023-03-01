@@ -272,9 +272,8 @@ console.log(calcSumm8(2,3));
 //-----
 
 // Функциональное выражение (Function Expression)
-let showMessage4 = function () {
+let showMessage4 = () =>
 	console.log('Привет!');
-};
 
 showMessage4();
 
